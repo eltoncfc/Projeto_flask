@@ -1,5 +1,22 @@
 const raiz = document.getElementById('lista');
 
+///////// fazendo funcionar o relogio
+function atualizaHora(){
+    var r = document.getElementByid('relogio');
+    var hoje = new Date();
+    var h = hoje.getHours();
+    var m = hoje.getMinutes();
+    var s = hoje.getSeconds();
+    if(h < 10)
+        h = '0' + h;
+    if(m < 10)
+        m = '0' + m;
+    if(s < 10)
+        s = '0' + s;
+              
+    r.textContent = h + ":" + m + ":" + s;
+}
+setInterval(atualizaHora, 1000);
 // var xhr = new XMLHttpRequest();
 // xhr.open('GET', 'http://juliovasquez.pythonanywhere.com/api/funcionarios');
 
